@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Akash Jaiswal | Java Backend Developer</title>
+
+    <meta name="description"
+          content="Portfolio of Akash Jaiswal, Java Backend Developer specializing in Java, Spring Boot, REST APIs, Microservices and Oracle.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: #0d1117;
+            color: #e6edf3;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* Navigation */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(13, 17, 23, 0.95);
+            border-bottom: 1px solid #30363d;
+        }
+
+        .nav-container {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #58a6ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #c9d1d9;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #58a6ff;
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #58a6ff;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            color: #8b949e;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 18px;
+            color: #8b949e;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 22px;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #238636;
+            border-color: #238636;
+        }
+
+        .btn-primary:hover {
+            background: #2ea043;
+        }
+
+        .btn-secondary:hover {
+            border-color: #58a6ff;
+            color: #58a6ff;
+        }
+
+        /* Sections */
+
+        section {
+            padding: 90px 0;
+            border-top: 1px solid #21262d;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 35px;
+        }
+
+        .section-title span {
+            color: #58a6ff;
+        }
+
+        .about-text {
+            max-width: 850px;
+            color: #8b949e;
+            font-size: 17px;
+        }
+
+        /* Skills */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 10px 16px;
+            border: 1px solid #30363d;
+            border-radius: 20px;
+            background: #161b22;
+            color: #c9d1d9;
+        }
+
+        /* Projects */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #58a6ff;
+        }
+
+        .project-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #8b949e;
+            margin-bottom: 18px;
+        }
+
+        .tech {
+            font-size: 14px;
+            color: #58a6ff;
+        }
+
+        /* Contact */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #8b949e;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #21262d;
+            color: #8b949e;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+        <div class="container nav-container">
+
+            <div class="logo">
+                Akash<span>.</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- Hero -->
+
+    <header class="hero">
+        <div class="container">
+
+            <div class="hero-content">
+
+                <p>Hi, I'm</p>
+
+                <h1>
+                    Akash <span>Jaiswal</span>
+                </h1>
+
+                <h2>
+                    Java Backend Developer
+                </h2>
+
+                <p>
+                    I build backend applications and REST APIs using
+                    Java, Spring Boot, Microservices and Oracle.
+                    I enjoy solving backend problems and building
+                    reliable and maintainable systems.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#projects" class="btn btn-primary">
+                        View Projects
+                    </a>
+
+                    <a href="https://github.com/akashjaiswal-dev"
+                       target="_blank"
+                       class="btn btn-secondary">
+                        GitHub
+                    </a>
+
+                    <!-- Replace this URL with your LinkedIn URL -->
+                    <a href="#contact"
+                       class="btn btn-secondary">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- About -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                About <span>Me</span>
+            </h2>
+
+            <p class="about-text">
+                I'm a Java Backend Developer focused on building
+                enterprise backend applications, REST APIs and
+                service-oriented systems.
+
+                My experience includes working with Java, Spring Boot,
+                Spring MVC, Hibernate/JPA, Oracle and application servers
+                such as WebLogic and Tomcat.
+
+                I also enjoy learning about Microservices, System Design
+                and scalable backend architectures.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Technical <span>Skills</span>
+            </h2>
+
+            <div class="skills">
+
+                <div class="skill">Java</div>
+                <div class="skill">Spring Boot</div>
+                <div class="skill">Spring MVC</div>
+                <div class="skill">Spring Data JPA</div>
+                <div class="skill">Hibernate</div>
+                <div class="skill">REST APIs</div>
+                <div class="skill">Microservices</div>
+                <div class="skill">Oracle</div>
+                <div class="skill">PL/SQL</div>
+                <div class="skill">SQL</div>
+                <div class="skill">Git</div>
+                <div class="skill">Maven</div>
+                <div class="skill">Postman</div>
+                <div class="skill">Tomcat</div>
+                <div class="skill">WebLogic</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+
+    <section id="projects">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Featured <span>Projects</span>
+            </h2>
+
+            <div class="projects">
+
+                <div class="project-card">
+
+                    <h3>Fund Request Application</h3>
+
+                    <p>
+                        Enterprise application for raising and tracking
+                        fund requests with backend processing and
+                        document/report generation.
+                    </p>
+
+                    <div class="tech">
+                        Java · Spring Boot · Hibernate · Oracle · WebLogic
+                    </div>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <h3>IFRS 17 Application</h3>
+
+                    <p>
+                        Backend application supporting insurance accounting
+                        processes and calculation modules.
+                    </p>
+
+                    <div class="tech">
+                        Java · Oracle · PL/SQL · Tomcat
+                    </div>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <h3>CEDGE Payroll</h3>
+
+                    <p>
+                        Payroll processing application supporting
+                        banking-related payroll operations.
+                    </p>
+
+                    <div class="tech">
+                        Java · PL/SQL · Oracle
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <div class="container contact">
+
+            <h2 class="section-title">
+                Let's <span>Connect</span>
+            </h2>
+
+            <p>
+                I'm open to discussing backend development,
+                Java opportunities and interesting projects.
+            </p>
+
+            <div class="contact-links">
+
+                <a href="https://github.com/akashjaiswal-dev"
+                   target="_blank"
+                   class="btn btn-secondary">
+                    GitHub
+                </a>
+
+                <!-- Replace with your actual LinkedIn URL -->
+                <a href="#"
+                   class="btn btn-secondary">
+                    LinkedIn
+                </a>
+
+                <!-- Replace with your email -->
+                <a href="mailto:your-email@example.com"
+                   class="btn btn-secondary">
+                    Email
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Akash Jaiswal. Built with HTML & CSS.
+        </p>
+
+    </footer>
+
+</body>
+</html>
